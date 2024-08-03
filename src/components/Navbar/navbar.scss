@@ -1,0 +1,77 @@
+@import "../../responsive.scss";
+
+nav {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #222831;
+    padding: 0 20px;
+    border-top-left-radius: 30px;
+
+    @include sm {
+        flex-direction: column;
+        height: 144px;
+        padding: 20px;
+        border-top-left-radius: unset;
+    }
+
+    .left-cont {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        img {
+            width: 32px;
+        }
+
+        .searchBar {
+            background-color: #3C4048;
+            border-radius: 5px;
+
+            input {
+                padding: 10px 10px 10px 30px;
+                background: url(/search.png) no-repeat scroll 10px 12px;
+                background-size: 12px;
+                border: none;
+                outline: none;
+                color: white;
+
+                &::placeholder {
+                    padding-left: 5px;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .right-cont {
+        display: flex;
+        gap: 30px;
+
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            img {
+                width: 40px;
+                padding: 10px;
+                border-radius: 50%;
+                background-color: #3C4048;
+                cursor: pointer;
+                overflow: visible;
+            }
+        }
+
+        .profile {
+
+            img {
+                width: 44px;
+                border-radius: 50%;
+                object-fit: cover;
+                cursor: pointer;
+            }
+        }
+    }
+}
