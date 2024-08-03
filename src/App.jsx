@@ -1,7 +1,25 @@
+import {} from "react"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import Layout from "./pages/Layout/Layout"
+import Homepage from "./pages/Home/Home"
+
 function App() {
 
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Homepage />
+        }
+      ]
+    }
+  ])
+
   return (
-    <div>App</div>
+    <RouterProvider router={router} />
   )
 }
 
