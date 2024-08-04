@@ -1,4 +1,8 @@
 .layout {
     max-width: 1366px;
     margin: 0 auto;
+
+    .content {
+        height: 100vh;
+    }
 }

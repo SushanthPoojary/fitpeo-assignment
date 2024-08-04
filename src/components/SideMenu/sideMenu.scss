@@ -1,0 +1,68 @@
+@import "../../responsive.scss";
+
+.sideMenu {
+    width: 80px;
+    background-color: #222831;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    position: sticky;
+
+    @include sm {
+        width: 100%;
+        flex-direction: row;
+        padding: 20px;
+    }
+
+    .menuIcons {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+
+        @include sm {
+            flex-direction: row;
+        }
+
+        .menuIcon {
+
+            &.active {
+                img {
+                    filter: opacity(0.5) drop-shadow(0 0 0 #7C00FE);
+                    ;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0px;
+                    width: 5px;
+                    height: 30px;
+                    background: #7C00FE;
+
+                    @include sm {
+                        left: unset;
+                        bottom: 0;
+                        width: 25px;
+                        height: 5px;
+                    }
+                }
+            }
+
+            img {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .powerIcon {
+
+        img {
+            @include sm {
+                transform: rotate(270deg);
+            }
+        }
+    }
+}
