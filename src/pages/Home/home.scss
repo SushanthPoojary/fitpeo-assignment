@@ -1,0 +1,15 @@
+@import "../../responsive.scss";
+
+.homepage {
+    display: flex;
+    height: calc(100% - 80px);
+
+    @include sm {
+        flex-direction: column-reverse;
+        height: calc(100% - 144px);
+    }
+
+    .dashMainContent {
+        
+    }
+}
