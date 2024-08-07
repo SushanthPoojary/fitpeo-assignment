@@ -2,7 +2,7 @@ import "./cards.scss";
 
 function Cards({ item }) {
 
-    console.log(item);
+    // console.log(item);
     return (
         <div className="cards">
             <img className={`cardImg ${item.name}`} src={item.img} alt="" />

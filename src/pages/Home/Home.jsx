@@ -3,30 +3,23 @@ import SideMenu from "../../components/SideMenu/SideMenu";
 import "./home.scss";
 import { cardData } from "../../lib/dummyData.js";
 import ProgressBar from "../../components/ProgressBar/ProgressBar.jsx";
-import CanvasJSReact from '@canvasjs/react-charts';
+import Chart from "chart.js/auto";
+import { CategoryScale } from "chart.js"
+import ChartComp from "../../components/Chart/ChartComp.jsx";
 
 function Homepage() {
 
-    var CanvasJS = CanvasJSReact.CanvasJS;
-    var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+    Chart.register(CategoryScale);
 
     const options = {
-        title: {
-            text: "Activity"
-        },
-        data: [
+
+        labels: [5, 9, 11, 13, 15, 17, 19],
+        datasets: [
             {
-                type: "column",
-                dataPoints: [
-                    { label: "5", y: 2 },
-                    { label: "9", y: 5 },
-                    { label: "11", y: 10 },
-                    { label: "13", y: 15 },
-                    { label: "15", y: 20 },
-                    { label: "20", y: 10 },
-                    { label: "25", y: 15 },
-                    { label: "30", y: 5 }
-                ]
+                label: 'Revenue',
+                data: [5, 10, 15, 20, 25, 30, 35],
+                backgroundColor: "#7C00FE",
+                borderWidth: 1,
             }
         ]
     }
@@ -46,7 +39,7 @@ function Homepage() {
                             }
                         </div>
                         <div className="graphCont">
-                            <CanvasJSChart options={options} />
+                            <ChartComp chartData={options} />
                         </div>
                         <div className="ordersCont">
                             <h3>Recent Orders</h3>
